@@ -40,7 +40,7 @@ const fetchUserLocation = (e) => {
     latitude = startPos.coords.latitude;
     longitude = startPos.coords.longitude;
     window.location.replace(
-      `http://localhost:3000/current-location?lat=${latitude}&long=${longitude}`
+      `https://cloves-weather-app.herokuapp.com/current-location?lat=${latitude}&long=${longitude}`
     );
   };
   var geoError = function (error) {
