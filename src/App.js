@@ -23,7 +23,7 @@ const getAllDirFiles = function (dirPath, arrayOfFiles) {
 const static_path = path.join(__dirname, "../public");
 const node_modules = path.join(__dirname, "../node_modules");
 const views_path = path.join(__dirname, "../views");
-const port = 3000;
+const port = process.env.PORT || 3000;
 let dataFromApi;
 
 const app = express();
