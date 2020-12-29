@@ -54,6 +54,10 @@ a:hover {
 .logo a {
   color: var(--accent-color);
 }
+
+.logo a:hover {
+  color: var(--hover-color);
+}
 .logo .logo-icon {
   width: 32px;
   height: 32px;
