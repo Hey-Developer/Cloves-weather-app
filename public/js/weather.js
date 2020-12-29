@@ -53,6 +53,15 @@ const fetchUserLocation = (e) => {
 const changeBG = (url) => {
   primaryBG.style.backgroundImage = `url("${url}")`;
   secondaryBG.style.backgroundImage = `linear-gradient(to bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url("${url}")`;
+  //@ Making Text color dynamic i.e according to backgroundImage
+  var vibrant = new Vibrant(url);
+  vibrant.getPalette().then((palette) => {
+    // document.querySelector("#body").style.color = palette.LightVibrant.hex;
+    root.style.setProperty("--primary-color", palette.LightVibrant.hex);
+    root.style.setProperty("--accent-color", palette.Vibrant.hex);
+    root.style.setProperty("--secondary-color", palette.DarkMuted.hex);
+    root.style.setProperty("--hover-color", palette.Muted.hex);
+  });
 };
 
 //$DOM and CSS MANIPULATION:
@@ -94,16 +103,6 @@ if (wStatus1.includes(weatherStatus)) {
   imgUrl = `./public/assets/${weatherStatus}/${num}.jpg`;
   changeBG(imgUrl);
 }
-
-//@ Making Text color dynamic i.e according to backgroundImage
-var vibrant = new Vibrant(imgUrl);
-vibrant.getPalette().then((palette) => {
-  // document.querySelector("#body").style.color = palette.LightVibrant.hex;
-  root.style.setProperty("--primary-color", palette.LightVibrant.hex);
-  root.style.setProperty("--accent-color", palette.Vibrant.hex);
-  root.style.setProperty("--secondary-color", palette.DarkMuted.hex);
-  root.style.setProperty("--hover-color", palette.Muted.hex);
-});
 
 //$ Events Handling..
 

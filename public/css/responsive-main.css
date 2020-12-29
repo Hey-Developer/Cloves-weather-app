@@ -1,0 +1,24 @@
+@media (max-width: 472px) {
+  .secondary-bg {
+    min-height: 80vh !important;
+  }
+  p {
+    font-size: 1.1rem !important;
+  }
+  .input-group .btn-sub {
+    width: 30%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3rem !important;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .input-group input {
+    padding: 0.5rem 0.8rem;
+    width: 75%;
+  }
+  .input-group input::placeholder {
+    font-size: 0.8rem;
+  }
+}
