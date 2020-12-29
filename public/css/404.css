@@ -1,0 +1,74 @@
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  color: #000;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.blur-bg {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../assets/404BG.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.container {
+  position: absolute;
+}
+
+.secondary-bg {
+  background: url("../assets/404BG.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  position: relative;
+}
+
+.secondary-bg h1 {
+  position: absolute;
+  font-size: 25rem;
+  z-index: 10;
+  /* color: rgba(255, 255, 255, 0.4); */
+  mix-blend-mode: overlay;
+}
+
+.secondary-bg h1 {
+  animation: letter-anime 3s linear infinite alternate;
+}
+
+@keyframes letter-anime {
+  from {
+    transform: translate(-15px, 0);
+  }
+  to {
+    transform: translate(15px, 0);
+  }
+}
+
+.logo {
+  mix-blend-mode: overlay;
+}
+.info {
+  z-index: 100;
+}
+
+.info h2 {
+  font-weight: bolder;
+  color: #eee;
+}
+
+.fa-home {
+  cursor: pointer;
+}
+
+.fa-home:hover {
+  opacity: 0.8;
+}

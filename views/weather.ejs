@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="../public/css/weather.css" />
+
+    <!-- Responsive.css -->
+    <link rel="stylesheet" href="../public/css/responsive.css" />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="../public/assets/Favicon.ico" type="image/x-icon" />
+
+    <title>CloveS WEATHER</title>
+  </head>
+  <body id="body">
+    <p class="maxFile d-none"><%= maxFile %></p>
+    <div class="blur-bg primary-bg"></div>
+    <div class="container">
+      <p class="text-center text-danger"><%= errorMsg %></p>
+      <div class="row secondary-bg rounded">
+        <div
+          class="col-12 col-sm-6 col-md-7 col-lg-8 d-flex flex-column justify-content-around align-items-center align-items-sm-start ps-sm-5 pt-5"
+        >
+          <div class="logo d-flex">
+            <a href="/">ᴛʜᴇ.ᴄʟᴏᴠᴇs</a>
+            <div class="logo-icon ms-2"></div>
+          </div>
+          <div
+            class="weather-info d-flex flex-sm-column flex-lg-row align-items-center align-items-sm-start align-items-lg-center"
+          >
+            <div class="temp"><%= temp %>&deg;C</div>
+            <div class="d-flex flex-column location">
+              <div class="city"><%= cityName %></div>
+              <div class="date-time">10:36 AM Thurs 24 DEC 20</div>
+            </div>
+            <div class="status d-flex flex-column">
+              <div class="weather-icon text-center"></div>
+              <p class="weather-text"><%= weatherStatus %></p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-md-5 col-lg-4 sidebar rounded-end d-flex flex-column"
+        >
+          <div class="search">
+            <form
+              action="/search-by-city"
+              class="form search-bar d-flex flex-row"
+              method="POST"
+            >
+              <input
+                type="text"
+                name="cityname"
+                id="cityname"
+                autocomplete="off"
+                placeholder="Enter Location"
+                class="w-75"
+              />
+              <button type="submit" class="search-icon" id="search-btn">
+                <i class="fas fa-search-location"></i>
+              </button>
+            </form>
+            <div class="cities">
+              <p class="current-location">
+                current location <i class="fas fa-map-marker-alt ms-1"></i>
+              </p>
+              <p>Delhi</p>
+              <p>Mumbai</p>
+              <p>Benglore</p>
+              <p>Pune</p>
+            </div>
+          </div>
+
+          <div class="weather-details">
+            <div class="hr"></div>
+            <p class="heading">Weather Details</p>
+            <div class="clouds-status">
+              <p>Clouds</p>
+              <p class="fw-bold"><%= clouds %>%</p>
+            </div>
+            <div class="humidity-status">
+              <p>Humidity</p>
+              <p class="fw-bold"><%= humidity %>%</p>
+            </div>
+            <div class="wind-status">
+              <p>Wind</p>
+              <p class="fw-bold"><%= windSpeed %>m/s</p>
+            </div>
+            <div class="pressure-status">
+              <p>Pressure</p>
+              <p class="fw-bold"><%= pressure %>pa</p>
+            </div>
+            <div class="hr"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../node_modules/node-vibrant/dist/vibrant.min.js"></script>
+    <!-- Custom Script -->
+    <script src="../public/js/moment.min.js"></script>
+    <script type="module" src="../public/js/weather.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

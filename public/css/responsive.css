@@ -1,0 +1,118 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+}
+
+/* Large devices (laptops/desktops, 1200px and down) */
+
+@media (max-width: 1200px) {
+  .search-bar input {
+    width: 65% !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down) */
+
+@media (max-width: 992px) {
+  .weather-info .location {
+    margin: 0;
+  }
+}
+
+@media (max-width: 852px) {
+  .secondary-bg h1 {
+    font-size: 23rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down) */
+
+@media (max-width: 768px) {
+  .secondary-bg h1 {
+    font-size: 18rem;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media (max-width: 600px) {
+  .search-bar input {
+    width: 55% !important;
+  }
+  .weather-info .location {
+    margin: 0 2rem;
+  }
+
+  .secondary-bg {
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  .container {
+    top: 50vh;
+    -ms-transform: translateY(-50vh);
+    transform: translateY(-50vh);
+  }
+  .search-bar input {
+    width: 75% !important;
+  }
+  .blur-bg {
+    background-position: center center;
+  }
+  :root {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 522px) {
+  .secondary-bg h1 {
+    font-size: 16rem;
+  }
+}
+/* Extra Extra Small Devices */
+
+@media (max-width: 472px) {
+  .input-group .btn-sub {
+    width: 30%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3rem !important;
+  }
+  .weather-info .temp {
+    font-size: 4rem;
+  }
+
+  .weather-info .location {
+    margin: 0 1.1rem;
+  }
+
+  .weather-info .location .city {
+    font-size: 2rem;
+  }
+
+  .weather-info .status {
+    margin-left: -0.5rem;
+  }
+  .weather-info .status .weather-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .secondary-bg h1 {
+    font-size: 14rem;
+  }
+  @keyframes letter-anime {
+    from {
+      transform: translate(0, -15px);
+    }
+    to {
+      transform: translate(0, 15px);
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .secondary-bg h1 {
+    font-size: 11rem;
+  }
+}
