@@ -18,7 +18,13 @@ body {
   font-family: "Quicksand", sans-serif;
   color: var(--primary-color);
 }
-
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
+  color: var(--hover-color);
+}
 .blur-bg {
   width: 100%;
   min-height: 100vh;
@@ -46,13 +52,8 @@ body {
   flex: 1;
 }
 .logo a {
-  text-decoration: none;
   color: var(--accent-color);
 }
-.logo a:hover {
-  color: var(--hover-color);
-}
-
 .logo .logo-icon {
   width: 32px;
   height: 32px;

@@ -124,13 +124,17 @@ app.post("/search-by-city", (req, res) => {
 });
 
 app.get("/current-location", (req, res) => {
-  const lat = req.query.lat;
-  const lon = req.query.long;
+  const lat = req.query.lat || 0;
+  const lon = req.query.long || 0;
   let maxFile;
+  let url;
+  if (req.query.cityname) {
+    url = `http://api.openweathermap.org/data/2.5/weather?q=${req.query.cityname}&units=metric&appid=71a8c7a2be7cf985a299657f9b550aca`;
+  } else {
+    url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=71a8c7a2be7cf985a299657f9b550aca`;
+  }
 
-  requests(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=71a8c7a2be7cf985a299657f9b550aca`
-  )
+  requests(url)
     .on("data", (chunk) => {
       const JSONData = JSON.parse(chunk);
       if (JSONData.cod == 200) {
