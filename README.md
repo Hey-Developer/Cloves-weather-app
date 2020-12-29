@@ -1,6 +1,6 @@
 # Cloves-weather-app
 
-> Link: https://cloves-weather-app.herokuapp.com/
+> Website-Link: https://cloves-weather-app.herokuapp.com/
 
 A Complete Dynamic Weather APP Built using Express.js and HTML,CSS and JS.
 -I didn't inlucde any database and auth in it, it is just a basic express application.
